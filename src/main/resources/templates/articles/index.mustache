@@ -1,0 +1,25 @@
+{{>layouts/header}}
+
+<table class="table">
+    <a href="/articles/new" class="btn btn-primary">New Article</a>
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">제목</th>
+            <th scope="col">내용</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {{#articleList}}
+        <!--articleList의 사용 범위를 지정하였으므로, article에 담긴 id,title,content 를 머스테치 문법으로 변경-->
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td> <a href="/articles/{{id}}">{{title}}</a> </td>
+            <td>{{content}}</td>
+        </tr>
+    {{/articleList}}
+    </tbody>
+</table>
+
+{{>layouts/footer}}

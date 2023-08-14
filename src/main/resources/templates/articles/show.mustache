@@ -1,0 +1,30 @@
+{{>layouts/header}}
+
+<table class="table">
+
+
+    <a href="/articles" class="btn btn-primary">Go to Article List</a>
+    <thead>
+
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">제목</th>
+            <th scope="col">내용</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    {{#article}}
+        <!--article의 사용 범위를 지정하였으므로, article에 담긴 Id,Title,Content 를 머스테치 문법으로 변경-->
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{title}}</td>
+            <td>{{content}}</td>
+        </tr>
+    {{/article}}
+
+    </tbody>
+   </table>
+<a href="/articles/{{article.id}}/edit" class="btn btn-primary">Edit</a>
+<a href="/articles/{{article.id}}/delete" class="btn btn-danger">delete</a>
+{{>layouts/footer}}
